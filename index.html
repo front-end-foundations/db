@@ -22,21 +22,6 @@
     <script>
       const addForm = document.querySelector(".add-form");
 
-      const deleteCheckboxes = document.querySelector("input[type=checkbox]");
-
-      deleteCheckboxes.addEventListener("click", (e) => {
-        console.log(e.target.id);
-      });
-
-      // const deleteCheckboxes = document.querySelectorAll(
-      //   "input[type=checkbox]"
-      // );
-
-      addForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        addEmployee();
-      });
-
       function addEmployee() {
         const name = document.querySelector("#name").value;
         const salary = document.querySelector("#salary").value;
@@ -63,6 +48,16 @@
           
           `;
           document.querySelector("ul").appendChild(li);
+        });
+
+        const deleteCheckboxes = document.querySelector("input[type=checkbox]");
+
+        // const deleteCheckboxes = document.querySelectorAll(
+        //   "input[type=checkbox]"
+        // );
+
+        deleteCheckboxes.addEventListener("change", (e) => {
+          console.log(e.target.id);
         });
       }
 
